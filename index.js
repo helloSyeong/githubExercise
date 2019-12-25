@@ -14,15 +14,15 @@ app.use(logger("tiny"));
 
 app.get("/", (_, res) => res.render("index"));
 
-const server = app.listen(PORT, () => 
-   console.log(`Listening on http://localhost:${PORT}`)
-)
+const server = app.listen(PORT, () =>
+  console.log(`Listening on http://localhost:${PORT}`)
+);
 
 const io = socketIO.listen(server);
 
 io.on("connect", socket => {
-   socket.on("login", data => {
-      // const { value } = data;
-      
-   })
-})
+  socket.on("login", data => {
+    // const { value } = data;
+    console.log("git test");
+  });
+});
